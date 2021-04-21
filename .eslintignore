@@ -1,0 +1,6 @@
+resources/assets/js/serviceWorker.js
+resources/assets/js/ziggy.js
+**/node_modules/*
+public/*
+public_html/*
+vendor/*

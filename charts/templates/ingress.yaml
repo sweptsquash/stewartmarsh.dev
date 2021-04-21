@@ -1,0 +1,26 @@
+{{- if .Values.ingress.enabled -}}
+{{- $svcName := .Values.image.repository -}}
+{{- $env := .Values.env -}}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ $svcName }}
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+spec:
+  rules:
+  {{- range .Values.ingress.hosts }}
+    - host: {{ .host }}
+      http:
+        paths:
+        {{- range .paths }}
+          - path: {{ . }}
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $svcName }}
+                port:
+                  number: 80
+        {{- end }}
+  {{- end }}
+{{- end }}

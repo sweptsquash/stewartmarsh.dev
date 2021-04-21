@@ -1,0 +1,9 @@
+@import 'variables';
+@import '~bootstrap/scss/bootstrap.scss';
+
+.header {
+    h1 {
+        margin-top: 10rem !important;
+        margin-bottom: 2rem !important;
+    }
+}

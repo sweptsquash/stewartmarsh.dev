@@ -1,0 +1,45 @@
+replicaCount: 1
+env: local
+logChannel: stack
+repositoryName: stewartmarsh
+image:
+  repository: stewartmarsh
+  pullPolicy: IfNotPresent
+  registry: stewartmarsh
+projectPath: ""
+xdebugEnabled: false
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  ports:
+    - name: web
+      port: 80
+
+ingress:
+  enabled: true
+  annotations:
+    ingress.kubernetes.io/enable-cors: "true"
+    kubernetes.io/ingress.class: traefik
+  hosts:
+    - name: stewartmarsh
+      host: stewartmarsh.test
+      paths: ["/"]
+    - name: stewartmarshwww
+      host: www.stewartmarsh.test
+      paths: ["/"]
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

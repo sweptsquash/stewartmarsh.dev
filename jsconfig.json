@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "es2020",
+        "module": "commonjs",
+        "allowSyntheticDefaultImports": false,
+        "baseUrl": ".",
+        "paths": {
+            "ziggy": ["./vendor/tightenco/ziggy/dist"],
+            "vue$": ["./node_modules/vue/dist/vue.runtime.esm.js"],
+            "@/*": ["./resources/assets/js/*"]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "public",
+        "public_html",
+        "vendor",
+        "resources/assets/js/ziggy.js"
+    ]
+}

@@ -1,0 +1,20 @@
+grumphp:
+    ascii:
+        failed: ~
+        succeeded: ~
+    tasks:
+        composer_normalize:
+            indent_size: 4
+            indent_style: "space"
+            no_update_lock: true
+            verbose: false
+        npm_script:
+            script: check-js
+            triggered_by: [js, scss, vue]
+            is_run_task: true
+            silent: true
+            metadata:
+                label: prettier
+        phpcsfixer:
+            config: .php_cs.dist
+            using_cache: false
