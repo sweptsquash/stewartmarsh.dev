@@ -24,7 +24,8 @@ class HomepageController extends Controller
      */
     public function experience(): InertiaResponse
     {
-        return Inertia::render('Experience');
+        return Inertia::render('Experience')
+            ->withViewData(['meta' => ['title' => 'Experience']]);
     }
 
     /**
@@ -34,6 +35,7 @@ class HomepageController extends Controller
      */
     public function contact(): InertiaResponse
     {
-        return Inertia::render('Contact');
+        return Inertia::render('Contact')
+            ->withViewData(['meta' => ['title' => 'Contact Me']]);
     }
 }
