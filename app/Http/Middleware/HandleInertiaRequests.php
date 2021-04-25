@@ -38,10 +38,6 @@ class HandleInertiaRequests extends Middleware
     {
         return array_merge(parent::share($request), [
             'appName'   => config('app.name'),
-            'csrf'      => csrf_token(),
-            'token'     => fn () => $request->hasCookie('token') ? $request->cookie('token') : null,
-            'user'      => fn () => $request->user() ?
-                $request->user()->only('id', 'username', 'display_name', 'date_format', 'timezone', 'role') : null,
         ]);
     }
 }
